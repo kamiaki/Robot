@@ -2,6 +2,7 @@ package com.aki.robot.service.impl;
 
 import com.aki.robot.config.BeanName;
 import com.aki.robot.inPut.InPut;
+import com.aki.robot.po.Position;
 import com.aki.robot.robot.DoRobot;
 import com.aki.robot.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,13 @@ public class MainServiceImpl implements MainService {
 
     @Override
     public void doMain() {
-        int key = inPutUtil.getUserInPut();
-        doRobot.press(2000, key);
+//        int key = inPutUtil.getUserInPut();
+//        doRobot.press(2000, key);
+//        doRobot.mouseLeftOnClick(2000,new Position(100,100));
+//        doRobot.mouseRightOnClick(2000,new Position(100,100));
+//        doRobot.rollMouse(2000, 50);
+//        doRobot.rollMouse(2000,-50);
+
+        doRobot.getColor(2000,new Position(100,100));
     }
 }
