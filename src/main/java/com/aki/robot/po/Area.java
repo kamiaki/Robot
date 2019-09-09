@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Position {
-    int x;
-    int y;
+public class Area {
+    private int x1;
+    private int y1;
+    private int x2;
+    private int y2;
 }
