@@ -24,6 +24,7 @@ public interface DoRobot {
 
     void mouseRightOnClick(int delay, Position position);
 
+    void sleep(int time);
     /**
      * 滚轮移动 -上 +下
      * @param delay

@@ -74,6 +74,15 @@ public class DoRobtImpl implements DoRobot {
     }
 
     @Override
+    public void sleep(int time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void rollMouse(int delay, int val) {
         robot.delay(delay);
         robot.mouseWheel(val);

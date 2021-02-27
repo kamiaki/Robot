@@ -23,48 +23,112 @@ public class MainServiceImpl implements MainService {
     // #000001 33 47 33 30 血条
     @Override
     public void doMain() {
+        Position hasMonsterPosition = null;
         while (true) {
             int beforeStep = 50 + (int) (Math.random() * 50);
-            int afterStep = 200 + (int) (Math.random() * 5);
+            int afterStep = 250 + (int) (Math.random() * 5);
             int random = (int) (Math.random() * 5);
             //0xFFEFE1C6 593 164 自动战斗
-            String zd = SpringUtil.toHexFromColor(doRobot.getColor(1000, new Position(593, 164)));
+            String zd = SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(593, 164)));
             if (!"0xFFEFE1C6".equals(zd)) {
                 // 移动1
-                doRobot.mouseLeftOnClick(0, new Position(481 + random, 382 + random) ,1000);
+                doRobot.mouseLeftOnClick(0, new Position(481 + random, 382 + random), 1000);
                 // 移动2
-                doRobot.mouseLeftOnClick(0, new Position(165 + random, 146 + random) ,500);
+                doRobot.mouseLeftOnClick(0, new Position(165 + random, 146 + random), 1000);
             } else {
-                // 1
-                doRobot.mouseLeftOnClick(beforeStep, new Position(28 + random, 263 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(28 + random, 263 + random) ,0);
-                // 2
-                doRobot.mouseLeftOnClick(beforeStep, new Position(97 + random, 232 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(97 + random, 232 + random) ,0);
-                // 3
-                doRobot.mouseLeftOnClick(beforeStep, new Position(168 + random, 200 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(168 + random, 200 + random) ,0);
-                // 4
-                doRobot.mouseLeftOnClick(beforeStep, new Position(233 + random, 148 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(233 + random, 148 + random) ,0);
-                // 5
-                doRobot.mouseLeftOnClick(beforeStep, new Position(289 + random, 112 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(289 + random, 112 + random) ,0);
-                // 6
-                doRobot.mouseLeftOnClick(beforeStep, new Position(105 + random, 315 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(105 + random, 315 + random) ,0);
-                // 7
-                doRobot.mouseLeftOnClick(beforeStep, new Position(159 + random, 256 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(159 + random, 256 + random) ,0);
-                // 8
-                doRobot.mouseLeftOnClick(beforeStep, new Position(218 + random, 229 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(218 + random, 229 + random) ,0);
-                // 9
-                doRobot.mouseLeftOnClick(beforeStep, new Position(295 + random, 205 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(295 + random, 205 + random) ,0);
-                // 10
-                doRobot.mouseLeftOnClick(beforeStep, new Position(346 + random, 179 + random) ,afterStep);
-                doRobot.mouseLeftOnClick(beforeStep, new Position(346 + random, 179 + random) ,2000);
+                if (hasMonsterPosition != null) {
+                    doRobot.sleep(10000);
+                    doRobot.mouseLeftOnClick(beforeStep, hasMonsterPosition, afterStep);
+                    if (SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = null;
+                        continue;
+                    }
+                    doRobot.mouseLeftOnClick(beforeStep, hasMonsterPosition, 0);
+                } else {
+                    // 1
+                    Position position = new Position(28 + random, 263 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    // 判断有没有怪物 0xFFF8F4E6 59, 494
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 2
+                    position = new Position(97 + random, 232 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 3
+                    position = new Position(168 + random, 200 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 4
+                    position = new Position(233 + random, 148 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 5
+                    position = new Position(289 + random, 112 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 6
+                    position = new Position(105 + random, 315 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 7
+                    position = new Position(159 + random, 256 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 8
+                    position = new Position(218 + random, 229 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 9
+                    position = new Position(295 + random, 205 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    // 10
+                    position = new Position(346 + random, 179 + random);
+                    doRobot.mouseLeftOnClick(beforeStep, position, afterStep);
+                    doRobot.mouseLeftOnClick(beforeStep, position, 0);
+                    if (!SpringUtil.toHexFromColor(doRobot.getColor(0, new Position(59, 494))).equals("0xFFF8F4E6")) {
+                        hasMonsterPosition = position;
+                        continue;
+                    }
+                    //睡觉
+                    doRobot.sleep(2000);
+                }
             }
         }
     }
