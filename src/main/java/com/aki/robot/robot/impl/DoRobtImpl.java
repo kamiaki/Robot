@@ -12,6 +12,7 @@ import java.awt.event.InputEvent;
 @Component(value = BeanName.doRobt)
 public class DoRobtImpl implements DoRobot {
     public static final String beanName = BeanName.doRobt;
+    public static final int interval = 100;
     private static Robot robot;
 
     static {
@@ -55,11 +56,13 @@ public class DoRobtImpl implements DoRobot {
     }
 
     @Override
-    public void mouseLeftOnClick(int delay, Position position) {
-        robot.delay(delay);
+    public void mouseLeftOnClick(int beforeDelay, Position position, int afterDelay) {
+        robot.delay(beforeDelay);
         robot.mouseMove(position.getX(), position.getY());
+        robot.delay(interval);
         robot.mousePress(InputEvent.BUTTON1_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        robot.delay(afterDelay);
     }
 
     @Override

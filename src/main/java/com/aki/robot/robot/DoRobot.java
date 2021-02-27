@@ -20,7 +20,7 @@ public interface DoRobot {
 
     void mouseRightOnDoubleClick(int delay, Position position);
 
-    void mouseLeftOnClick(int delay, Position position);
+    void mouseLeftOnClick(int beforeDelay, Position position, int afterDelay);
 
     void mouseRightOnClick(int delay, Position position);
 
