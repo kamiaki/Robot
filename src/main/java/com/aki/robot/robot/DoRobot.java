@@ -14,10 +14,21 @@ public interface DoRobot {
      */
     void press(int delay, int key);
 
+    void mouseMove(int delay, Position position);
+
+    void mouseLeftOnDoubleClick(int delay, Position position);
+
+    void mouseRightOnDoubleClick(int delay, Position position);
+
     void mouseLeftOnClick(int delay, Position position);
 
     void mouseRightOnClick(int delay, Position position);
 
+    /**
+     * 滚轮移动 -上 +下
+     * @param delay
+     * @param val
+     */
     void rollMouse(int delay, int val);
 
     Color getColor(int delay, Position position);

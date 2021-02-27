@@ -29,7 +29,34 @@ public class DoRobtImpl implements DoRobot {
     }
 
     @Override
+    public void mouseMove(int delay, Position position) {
+        robot.delay(delay);
+        robot.mouseMove(position.getX(), position.getY());
+    }
+
+    @Override
+    public void mouseLeftOnDoubleClick(int delay, Position position) {
+        robot.delay(delay);
+        robot.mouseMove(position.getX(), position.getY());
+        robot.mousePress(InputEvent.BUTTON1_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        robot.mousePress(InputEvent.BUTTON1_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+    }
+
+    @Override
+    public void mouseRightOnDoubleClick(int delay, Position position) {
+        robot.delay(delay);
+        robot.mouseMove(position.getX(), position.getY());
+        robot.mousePress(InputEvent.BUTTON3_MASK);
+        robot.mouseRelease(InputEvent.BUTTON3_MASK);
+        robot.mousePress(InputEvent.BUTTON3_MASK);
+        robot.mouseRelease(InputEvent.BUTTON3_MASK);
+    }
+
+    @Override
     public void mouseLeftOnClick(int delay, Position position) {
+        robot.delay(delay);
         robot.mouseMove(position.getX(), position.getY());
         robot.mousePress(InputEvent.BUTTON1_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
@@ -37,6 +64,7 @@ public class DoRobtImpl implements DoRobot {
 
     @Override
     public void mouseRightOnClick(int delay, Position position) {
+        robot.delay(delay);
         robot.mouseMove(position.getX(), position.getY());
         robot.mousePress(InputEvent.BUTTON3_MASK);
         robot.mouseRelease(InputEvent.BUTTON3_MASK);
