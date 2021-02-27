@@ -46,37 +46,42 @@ public class MainServiceImpl implements MainService {
 //            System.out.println(s2);
 //            System.out.println(color2);
 //            // 1
-            doRobot.mouseLeftOnClick(step, new Position(97, 304));
+            doRobot.mouseLeftOnClick(step, new Position(28 +(int)( Math.random() * 5), 263+(int)( Math.random() * 5)));
             // 2
-            doRobot.mouseLeftOnClick(step, new Position(163, 261));
+            doRobot.mouseLeftOnClick(step, new Position(97+(int)( Math.random() * 5), 232+(int)( Math.random() * 5)));
             // 3
-            doRobot.mouseLeftOnClick(step, new Position(211, 217));
-
+            doRobot.mouseLeftOnClick(step, new Position(168+(int)( Math.random() * 5), 200+(int)( Math.random() * 5)));
             // 4
-            doRobot.mouseLeftOnClick(step, new Position(291, 208));
-
+            doRobot.mouseLeftOnClick(step, new Position(233+(int)( Math.random() * 5), 148+(int)( Math.random() * 5)));
             // 5
-            doRobot.mouseLeftOnClick(step, new Position(359, 144));
+            doRobot.mouseLeftOnClick(step, new Position(289+(int)( Math.random() * 5), 112+(int)( Math.random() * 5)));
+
+            // move
+            doRobot.mouseLeftOnClick(step, new Position(530+(int)( Math.random() * 5), 416+(int)( Math.random() * 5)));
+            doRobot.mouseLeftOnClick(step, new Position(530+(int)( Math.random() * 5), 416+(int)( Math.random() * 5)));
+            doRobot.mouseLeftOnClick(step, new Position(530+(int)( Math.random() * 5), 416+(int)( Math.random() * 5)));
+
 
             // 6
-            doRobot.mouseLeftOnClick(step, new Position(58, 273));
-
+            doRobot.mouseLeftOnClick(step, new Position(105 +(int)( Math.random() * 5), 315+(int)( Math.random() * 5)));
             // 7
-            doRobot.mouseLeftOnClick(step, new Position(114, 232));
-
+            doRobot.mouseLeftOnClick(step, new Position(159+(int)( Math.random() * 5), 256+(int)( Math.random() * 5)));
             // 8
-            doRobot.mouseLeftOnClick(step, new Position(184, 189));
-
+            doRobot.mouseLeftOnClick(step, new Position(218+(int)( Math.random() * 5), 229+(int)( Math.random() * 5)));
             // 9
-            doRobot.mouseLeftOnClick(step, new Position(248, 139));
+            doRobot.mouseLeftOnClick(step, new Position(295+(int)( Math.random() * 5), 205+(int)( Math.random() * 5)));
             // 10
-            doRobot.mouseLeftOnClick(step, new Position(301, 95));
-
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
+            doRobot.mouseLeftOnClick(step, new Position(363+(int)( Math.random() * 5), 160+(int)( Math.random() * 5)));
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    public static void main(String[] args) {
+        int i = (int) (Math.random() * 5);
+        System.out.println(i);
     }
 }
