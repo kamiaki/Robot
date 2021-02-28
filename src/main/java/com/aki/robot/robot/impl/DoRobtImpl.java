@@ -30,9 +30,9 @@ public class DoRobtImpl implements DoRobot {
     }
 
     @Override
-    public void mouseMove(int delay, Position position) {
-        robot.delay(delay);
+    public void mouseMove(int afterDelay, Position position) {
         robot.mouseMove(position.getX(), position.getY());
+        robot.delay(afterDelay);
     }
 
     @Override

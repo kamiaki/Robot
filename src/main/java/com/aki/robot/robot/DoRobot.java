@@ -14,7 +14,7 @@ public interface DoRobot {
      */
     void press(int delay, int key);
 
-    void mouseMove(int delay, Position position);
+    void mouseMove(int afterDelay, Position position);
 
     void mouseLeftOnDoubleClick(int delay, Position position);
 
