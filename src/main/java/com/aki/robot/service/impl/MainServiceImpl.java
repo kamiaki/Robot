@@ -24,15 +24,15 @@ public class MainServiceImpl implements MainService {
         while (true) {
             System.out.println("程序启动");
             // 选择附魔
-            doRobot.mouseLeftOnClick(500, new Position(403, 282), 500);
-            // 点击附魔按钮
-            doRobot.mouseLeftOnClick(500, new Position(504, 467), 500);
-            // 点击装备
-            doRobot.mouseLeftOnClick(500, new Position(651, 433), 500);
-            // 点击覆盖
-            doRobot.mouseLeftOnClick(500, new Position(590, 191), 500);
+            doRobot.mouseLeftOnClick(500, new Position(187, 477), 500);
+//            // 点击附魔按钮
+//            doRobot.mouseLeftOnClick(500, new Position(504, 467), 500);
+//            // 点击装备
+//            doRobot.mouseLeftOnClick(500, new Position(651, 433), 500);
+//            // 点击覆盖
+//            doRobot.mouseLeftOnClick(500, new Position(590, 191), 500);
             //间隔一段时间
-            doRobot.sleep(6 * 1000);
+            doRobot.sleep(11 * 1000);
         }
     }
 }
